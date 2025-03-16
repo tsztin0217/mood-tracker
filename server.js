@@ -52,7 +52,7 @@ app.use('/auth', authController);
 
 app.use(isSignedIn);
 
-app.use('/users/:userId/logs', logsController);
+app.use('/users/:userId/moods', logsController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
