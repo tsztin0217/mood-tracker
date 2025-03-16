@@ -3,8 +3,10 @@
     <% if(user) { %>
         <a href="/users/<%= user._id %>/moods">View My Moods</a>
         <a href="/auth/sign-out">Sign Out</a
+            <h1>Welcome to the app, <%= user.username %>!</h1>
     <% } else { %>
         <a href="/auth/sign-in">Sign In</a>
         <a href="/auth/sign-up">Sign Up</a>
+        <h1>Welcome to the app, guest!</h1>
     <% } %>
 </nav>
