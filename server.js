@@ -8,6 +8,9 @@ const morgan = require('morgan');
 const session = require('express-session');
 
 const authController = require('./controllers/auth.js');
+const logsController = require('./controllers/logs.js');
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -28,6 +31,9 @@ app.use(
   })
 );
 
+
+app.use(passUserToView);
+
 app.get('/', (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
@@ -43,6 +49,10 @@ app.get('/vip-lounge', (req, res) => {
 });
 
 app.use('/auth', authController);
+
+app.use(isSignedIn);
+
+app.use('/users/:userId/logs', logsController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
