@@ -73,6 +73,14 @@
                     <td>
                         <%= log.progress%>
                     </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <form action="/users/<%= user._id %>/moods/<%= log._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                     </th>
                     </tr>
 
