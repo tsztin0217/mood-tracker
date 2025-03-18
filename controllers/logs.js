@@ -34,5 +34,18 @@ router.post('/', async (req, res) => {
     }
  })
 
+
+router.get('/:moodName', async (req, res) => {
+    try {
+        const { moodName } = req.params;
+        const currentUser = await User.findById(req.session.user._id);
+        const moodLogs = currentUser.logs.filter(log => log.mood === moodName);
+        res.render('moods/show.ejs', {currentUser, moodName, moodLogs});
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
  
+
 module.exports = router;
