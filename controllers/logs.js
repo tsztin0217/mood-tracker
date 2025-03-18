@@ -47,5 +47,16 @@ router.get('/:moodName', async (req, res) => {
     }
 })
  
+router.delete('/:moodId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.logs.id(req.params.moodId).deleteOne();
 
+        await currentUser.save();
+        res.redirect(req.get('referer'));
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
 module.exports = router;
