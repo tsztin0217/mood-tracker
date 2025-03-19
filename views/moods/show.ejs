@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>
         <%= moodName %>
     </title>
@@ -80,7 +81,7 @@
                     </td>
                     <td>
                         <form action="/users/<%= user._id %>/moods/<%= log._id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete</button>
+                            <button>Delete</button>
                         </form>
                     </td>
                     </th>
