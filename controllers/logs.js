@@ -27,7 +27,9 @@ router.post('/', async (req, res) => {
         const currentUser = await User.findById(req.session.user._id);
         currentUser.logs.push(req.body);
         await currentUser.save();
-        res.redirect(`/users/${currentUser._id}/moods`)
+        const currentLog = currentUser.logs[currentUser.logs.length -1]
+        res.redirect(`/users/${currentUser._id}/moods/${currentLog.mood}`);
+        console.log(currentUser.logs)
     } catch (error) {
         console.log(error);
         res.redirect('/')
@@ -66,6 +68,19 @@ router.get('/:logId/edit', async (req, res) => {
         const log = currentUser.logs.id(req.params.logId);
         res.render('moods/edit.ejs', {log});
 
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
+router.put('/:logId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const log = currentUser.logs.id(req.params.logId);
+        log.set(req.body);
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/moods/${log.mood}`);
     } catch (error) {
         console.log(error);
         res.redirect('/');
