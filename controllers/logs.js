@@ -59,4 +59,16 @@ router.delete('/:moodId', async (req, res) => {
         res.redirect('/');
     }
 })
+
+router.get('/:logId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const log = currentUser.logs.id(req.params.logId);
+        res.render('moods/edit.ejs', {log});
+
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
 module.exports = router;
