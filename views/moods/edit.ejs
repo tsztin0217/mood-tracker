@@ -25,8 +25,8 @@
             <label for="intensity">Intensity: </label>
             <select name="intensity" id="intensity" required>
                 <option value="Choose a Number" disabled>Choose a Number</option>
-                <option value="1" <%=log.intensity ===1 ? "selected" : "" %>>1</option>
-                <option value="2" <%=log.intensity ===2 ? "selected" : "" %>>2</option>
+                <option value="1" <%=log.intensity === 1 ? "selected" : "" %>>1</option>
+                <option value="2" <%=log.intensity === 2 ? "selected" : "" %>>2</option>
                 <option value="3" <%=log.intensity === 3 ? "selected" : "" %>>3</option>
                 <option value="4" <%=log.intensity === 4 ? "selected" : "" %>>4</option>
                 <option value="5" <%=log.intensity === 5 ? "selected" : "" %>>5</option>
@@ -51,7 +51,7 @@
                 <option value="In Progress"  <%= log.progress === "In Progress" ? "selected" : "" %>>In Progress</option>
                 <option value="Completed"  <%= log.progress === "Completed" ? "selected" : "" %>>Completed</option>
             </select>
-            <button type="submit">Update</button>
+            <button class="update-button" type="submit">Update</button>
         </form>
 </body>
 
