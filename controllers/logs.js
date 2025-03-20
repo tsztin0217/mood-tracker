@@ -17,7 +17,7 @@ router.get('/', async(req, res) => {
 
 
 router.get('/new', (req, res) => {
-    res.render('moods/new.ejs');
+    res.render('moods/new.ejs', { mood: req.query.mood || '' });
 })
 
 
