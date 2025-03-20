@@ -13,7 +13,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-        <h1>Logs for Mood: <%= moodName %>
+        <h1>Reflections for my <%= moodName %> mood...
         </h1>
 
         <% if (moodLogs.length> 0) { %>
@@ -76,12 +76,12 @@
                     </td>
                     <td>
                         <form action="/users/<%= user._id %>/moods/<%= log._id %>/edit" method="GET">
-                            <button>Edit</button>
+                            <button class="table-button">Edit</button>
                         </form>
                     </td>
                     <td>
                         <form action="/users/<%= user._id %>/moods/<%= log._id %>?_method=DELETE" method="POST">
-                            <button>Delete</button>
+                            <button class="table-button">Delete</button>
                         </form>
                     </td>
                     </th>
@@ -93,7 +93,7 @@
                 <p>No logs found for this mood.</p>
                 <% } %>
 
-                    <a href="/users/<%= currentUser._id %>/moods">Back to Moods</a>
+                    <a href="/users/<%= currentUser._id %>/moods" class="back-link">Back to Moods</a>
 </body>
 
 </html>
