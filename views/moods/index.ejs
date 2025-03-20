@@ -11,6 +11,9 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
         <h1>My Moods</h1>
+        <% if (user) { %>
+        <h2>Welcome back, <%= user.username %>! How are you feeling today?</h2>
+        <% } %>
         <h2>
             <a href="/users/<%= user._id %>/moods/new">Add A Mood</a>
         </h2>
