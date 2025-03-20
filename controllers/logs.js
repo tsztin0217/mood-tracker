@@ -12,7 +12,6 @@ router.get('/', async(req, res) => {
         }
         return acc;
     }, []);
-    console.log(uniqueMoods)
     res.render('moods/index.ejs', {currentUser, uniqueMoods});
 }) 
 
