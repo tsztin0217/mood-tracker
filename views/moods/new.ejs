@@ -12,7 +12,7 @@
     <h2>Take a moment to check in with yourself.</h2>
     <form action="/users/<%= user._id %>/moods" method="post">
         <label for="mood">Type of Mood: </label>
-        <input type="text" name="mood"  id="mood" required />
+        <input type="text" name="mood" id="mood" value="<%= mood %>" required />
 
         <label for="description">description: </label>
         <textarea name="description" id="description" required></textarea>
