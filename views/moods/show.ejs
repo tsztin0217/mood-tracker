@@ -13,7 +13,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-        <h1>Reflections for my <%= moodName %> mood...
+        <h1>Reflections for my <%= moodName %> mood
         </h1>
 
         <% if (moodLogs.length> 0) { %>
@@ -92,6 +92,7 @@
             <% } else { %>
                 <p>No logs found for this mood.</p>
                 <% } %>
+                <a href="/users/<%= currentUser._id %>/moods/new?mood=<%= moodName %>" class="back-link">Add a new log for this mood</a><br>
 
                     <a href="/users/<%= currentUser._id %>/moods" class="back-link">Back to Moods</a>
 </body>
