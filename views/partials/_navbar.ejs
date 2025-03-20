@@ -1,17 +1,19 @@
+<link rel="stylesheet" href="/stylesheets/partials.css" />
 <nav>
     <% if(user) { %>
         <p>
             <a href="/">Home</a>
+            <a href="/about">About Moody</a>
             <a href="/users/<%= user._id %>/moods">View My Moods</a>
             <a href="/auth/sign-out">Sign Out</a>
         </p>
-        <h1>Welcome to the app, <%= user.username %>!</h1>
+
         <% } else { %>
             <p>
                 <a href="/">Home</a>
+                <a href="/about">About Moody</a>
                 <a href="/auth/sign-in">Sign In</a>
                 <a href="/auth/sign-up">Sign Up</a>
             </p>
-            <h1>Welcome to the app, guest!</h1>
             <% } %>
 </nav>
