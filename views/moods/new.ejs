@@ -7,20 +7,22 @@
     <title>Add a Mood</title>
 </head>
 <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Add a Mood</h1>
+    <h2>Take a moment to check in with yourself.</h2>
     <form action="/users/<%= user._id %>/moods" method="post">
         <label for="mood">Type of Mood: </label>
         <input type="text" name="mood"  id="mood" required />
 
         <label for="description">description: </label>
-        <textarea name="description" id="description"></textarea>
+        <textarea name="description" id="description" required></textarea>
 
         <label for="date">Date: </label>
         <input type="datetime-local" name="date" id="date" required />
 
         <label for="intensity">Intensity: </label>
         <select name="intensity" id="intensity" required>
-            <option value="Choose a Number" disabled selected>Choose a Number</option>
+            <option value="" disabled selected>Choose a Number</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -40,14 +42,14 @@
         <textarea name="takeaway" id="takeaway"></textarea>
 
         <label for="progress">Progress: </label>
-        <select name="progress" id="progress required">
-            <option value="Choose an Action Status" disabled selected>Choose an Action Status</option>
+        <select name="progress" id="progress" required>
+            <option value="" disabled selected>Choose an Action Status</option>
             <option value="No Action Needed">No Action Needed</option>
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
         </select>
-        <button type="submit">Submit</button>
+        <button class="submit-button" type="submit">Submit</button>
     </form>
 </body>
 </html>
