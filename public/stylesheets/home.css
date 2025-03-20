@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Darumadrop+One&family=Rochester&family=Single+Day&display=swap');
+
+body {
+    font-family: 'Cormorant Infant', sans-serif;
+    margin: 0
+}
+
+
+  
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full height */
+    text-align: center;
+    background: linear-gradient(135deg, #8af0bd, #353d88);
+    /* Gradient background */
+    color: white;
+    padding: 20px;
+}
+
+
+.main-header {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.subheader {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+
+.auth-links {
+    margin-top: 20px;
+}
+
+.auth-links a {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    margin: 10px;
+}
+
+
+.signup-link {
+    background: rgba(154, 255, 162, 0.5);
+}
+
+.signup-link:hover {
+    background: rgba(154, 255, 162, 0.287);
+}
+
+/* Sign In Button */
+.signin-link {
+    background: rgba(154, 166, 255, 0.5);
+}
+
+.signin-link:hover {
+    background: rgba(154, 166, 255, 0.287);
+}
+
+.back-link {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #AEC6CF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.back-link:hover {
+    background-color: #8FAACF;
+    /* Slightly darker shade */
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .main-header {
+        font-size: 36px;
+    }
+
+    .subheader {
+        font-size: 18px;
+    }
+
+    .auth-links a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
