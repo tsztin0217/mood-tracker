@@ -17,8 +17,10 @@ I built Moody not just for myself, but for anyone who wants to better understand
 ## Screenshots
 ![screenshot of landing page](/assets/images/home.png)
 ![screenshot of moods index page](/assets/images/moods.png)
-![screenshot of example mood (happy) page with associated logs](/assets/images/happy.png)
+![screenshot of add moods form](/assets/images/newform.png)
 ![screenshot of example mood (stressed) page with associated logs](/assets/images/stressed.png)
+![screenshot of example mood (happy) page with associated logs](/assets/images/happy.png)
+
 
 
 ## Planning materials: 
