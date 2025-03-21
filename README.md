@@ -35,6 +35,7 @@ I built Moody not just for myself, but for anyone who wants to better understand
 - Authentication: bcrypt for password hashing, sessions for user authentication
 
 ## Future Imrpovements
+- Refine design to make it more mobile-friendly, ensuring a smoother experience on different screen sizes.
 - Implement flash messages for better user feedback on errors and successful actions.
 - Design customized error pages (404, 500, etc.) to improve user experience instead of generic error text.
 
