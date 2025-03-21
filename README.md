@@ -21,7 +21,6 @@ I built Moody not just for myself, but for anyone who wants to better understand
 ![screenshot of example mood (stressed) page with associated logs](/assets/images/stressed.png)
 
 
-
 ## Planning materials: 
 - Trello: https://trello.com/b/7pLwILAl/moody
 - Initial Mockup: https://docs.google.com/spreadsheets/d/1GJYTi-mWrVqr6dYYs5p1j7QqF1-GwB31KJMEUuE8F7E/edit?usp=sharing
@@ -29,6 +28,9 @@ I built Moody not just for myself, but for anyone who wants to better understand
 
 ## Technologies Used
 - Frontend: EJS (for rendering views)
-- Backend: Express.js
+- Backend: Node.js, Express.js
 - Database: MongoDB (with Mongoose)
 - Authentication: bcrypt for password hashing, sessions for user authentication
+
+## References
+[Date.prototype.toLocaleString() | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)

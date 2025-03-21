@@ -18,85 +18,88 @@
 
         <% if (moodLogs.length> 0) { %>
             <table>
-                <tr>
-                    <th>
-                        <strong>Date</strong>
-                    </th>
-                    <th>
-                        <strong>Description</strong>
-                    </th>
-                    <th>
-                        <strong>Intensity</strong>
-                    </th>
-                    <th>
-                        <strong>Next Steps</strong>
-                    </th>
-                    <th>
-                        <strong>Takeaway</strong>
-                    </th>
-                    <th>
-                        <strong>Progress</strong>
-                    </th>
-                    <th>
-                        <strong>Edit</strong>
-                    </th>
-                    <th>
-                        <strong>Delete</strong>
-                    </th>
-                </tr>
-                <% moodLogs.forEach(log=> { %>
+                <thead>
                     <tr>
-
-
-
+                        <th>
+                            <strong>Date</strong>
+                        </th>
+                        <th>
+                            <strong>Description</strong>
+                        </th>
+                        <th>
+                            <strong>Intensity</strong>
+                        </th>
+                        <th>
+                            <strong>Next Steps</strong>
+                        </th>
+                        <th>
+                            <strong>Takeaway</strong>
+                        </th>
+                        <th>
+                            <strong>Progress</strong>
+                        </th>
+                        <th>
+                            <strong>Edit</strong>
+                        </th>
+                        <th>
+                            <strong>Delete</strong>
+                        </th>
                     </tr>
-                    <td>
-                        <%= new Date(log.date).toLocaleString('en-US', { year: 'numeric' , month: 'long' ,
-                            day: 'numeric' , hour: '2-digit' , minute: '2-digit' }) %>
+                </thead>
+                <tbody>
+                    <% moodLogs.forEach(log=> { %>
+                        <tr>
+                            <td>
+                                <%= new Date(log.date).toLocaleString('en-US', { year: 'numeric' , month: 'long' ,
+                                    day: 'numeric' , hour: '2-digit' , minute: '2-digit' }) %>
 
-                    </td>
+                            </td>
+
+                            <td>
+                                <%= log.description %>
+                            </td>
+
+                            <td>
+                                <%= log.intensity %>
+                            </td>
+
+                            <td>
+                                <%= log.nextSteps %>
+                            </td>
+
+                            <td>
+                                <%= log.takeaway %>
+                            </td>
+
+                            <td>
+                                <%= log.progress%>
+                            </td>
+
+                            <td>
+                                <form action="/users/<%= user._id %>/moods/<%= log._id %>/edit" method="GET">
+                                    <button class="table-button">Edit</button>
+                                </form>
+                            </td>
+
+                            <td>
+                                <form action="/users/<%= user._id %>/moods/<%= log._id %>?_method=DELETE" method="POST">
+                                    <button class="table-button">Delete</button>
+                                </form>
+                            </td>
 
 
-                    <td>
-                        <%= log.description %>
-                    </td>
-                    </th>
+                        </tr>
 
-                    <td>
-                        <%= log.intensity %>
-                    </td>
-                    <td>
-                        <%= log.nextSteps %>
-                    </td>
-                    <td>
-                        <%= log.takeaway %>
-                    </td>
-                    <td>
-                        <%= log.progress%>
-                    </td>
-                    <td>
-                        <form action="/users/<%= user._id %>/moods/<%= log._id %>/edit" method="GET">
-                            <button class="table-button">Edit</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/users/<%= user._id %>/moods/<%= log._id %>?_method=DELETE" method="POST">
-                            <button class="table-button">Delete</button>
-                        </form>
-                    </td>
-                    </th>
-                    </tr>
-
-                    <% }) %>
+                        <% }) %>
+                </tbody>
             </table>
             <% } else { %>
                 <p>No logs found for this mood.</p>
                 <% } %>
-                <a href="/users/<%= currentUser._id %>/moods/new?mood=<%= moodName %>" class="back-link">Add a new log for this mood</a><br>
+                    <a href="/users/<%= currentUser._id %>/moods/new?mood=<%= moodName %>" class="back-link">Add a new
+                        log for this mood</a><br>
 
                     <a href="/users/<%= currentUser._id %>/moods" class="back-link">Back to Moods</a>
 </body>
-
-</html>
 
 </html>

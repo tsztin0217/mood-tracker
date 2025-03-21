@@ -28,7 +28,6 @@ router.post('/', async (req, res) => {
         await currentUser.save();
         const currentLog = currentUser.logs[currentUser.logs.length -1]
         res.redirect(`/users/${currentUser._id}/moods/${currentLog.mood}`);
-        console.log(currentUser.logs)
     } catch (error) {
         console.log(error);
         res.redirect('/')
