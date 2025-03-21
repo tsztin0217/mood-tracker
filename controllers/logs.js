@@ -3,17 +3,17 @@ const router = express.Router();
 
 const User = require('../models/user.js');
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     const logs = currentUser.logs || [];
-    const uniqueMoods = logs.reduce((acc, log)=> {
-        if (!acc.includes(log.mood)){
+    const uniqueMoods = logs.reduce((acc, log) => {
+        if (!acc.includes(log.mood)) {
             acc.push(log.mood);
         }
         return acc;
     }, []);
-    res.render('moods/index.ejs', {currentUser, uniqueMoods});
-}) 
+    res.render('moods/index.ejs', { currentUser, uniqueMoods });
+})
 
 
 router.get('/new', (req, res) => {
@@ -26,13 +26,13 @@ router.post('/', async (req, res) => {
         const currentUser = await User.findById(req.session.user._id);
         currentUser.logs.push(req.body);
         await currentUser.save();
-        const currentLog = currentUser.logs[currentUser.logs.length -1]
+        const currentLog = currentUser.logs[currentUser.logs.length - 1]
         res.redirect(`/users/${currentUser._id}/moods/${currentLog.mood}`);
     } catch (error) {
         console.log(error);
         res.redirect('/')
     }
- })
+})
 
 
 router.get('/:moodName', async (req, res) => {
@@ -40,13 +40,13 @@ router.get('/:moodName', async (req, res) => {
         const { moodName } = req.params;
         const currentUser = await User.findById(req.session.user._id);
         const moodLogs = currentUser.logs.filter(log => log.mood === moodName);
-        res.render('moods/show.ejs', {currentUser, moodName, moodLogs});
+        res.render('moods/show.ejs', { currentUser, moodName, moodLogs });
     } catch (error) {
         console.log(error);
         res.redirect('/');
     }
 })
- 
+
 router.delete('/:moodId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -64,7 +64,7 @@ router.get('/:logId/edit', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
         const log = currentUser.logs.id(req.params.logId);
-        res.render('moods/edit.ejs', {log});
+        res.render('moods/edit.ejs', { log });
 
     } catch (error) {
         console.log(error);

@@ -32,5 +32,10 @@ I built Moody not just for myself, but for anyone who wants to better understand
 - Database: MongoDB (with Mongoose)
 - Authentication: bcrypt for password hashing, sessions for user authentication
 
+## Future Imrpovements
+- Implement flash messages for better user feedback on errors and successful actions.
+- Design customized error pages (404, 500, etc.) to improve user experience instead of generic error text.
+
+
 ## References
 [Date.prototype.toLocaleString() | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
